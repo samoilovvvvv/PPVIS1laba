@@ -22,7 +22,7 @@ public class Table implements IGetButton{
 
         JButton button2 = new JButton("second");
         JButton button3 = new JButton("third");
-        JTable table = new JTable(6, 2);
+        JTable table = new JTable(4, 2);
         buttons.add(button1);
         buttons.add(button2);
         buttons.add(button3);

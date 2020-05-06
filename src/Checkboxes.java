@@ -32,14 +32,16 @@ public class Checkboxes implements IGetButton {
         boxes.add(checkBox3);
         buttons.add(button);
         button.addActionListener(e -> {
-
-            for(JCheckBox box:boxes){
-                if(textField.getText().equals(box.getText())){
+            boolean isEquals = false;
+            for (JCheckBox box : boxes) {
+                if (textField.getText().equals(box.getText())) {
+                    isEquals = true;
                     box.setSelected(!box.isSelected());
-                }else {
-                    JOptionPane.showMessageDialog(frame,
-                            "такого нет");
                 }
+            }
+            if(!isEquals) {
+                JOptionPane.showMessageDialog(frame,
+                        "такого нет");
             }
         });
          panel = new JPanel();

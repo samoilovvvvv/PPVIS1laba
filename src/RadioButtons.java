@@ -27,12 +27,22 @@ public class RadioButtons implements IGetButton {
         radioButtons.add(radioButton1);
         radioButtons.add(radioButton2);
         radioButtons.add(radioButton3);
+
         button.addActionListener(e -> {
+            boolean isEquals = false;
             for (JRadioButton button1 : radioButtons) {
-                button1.setSelected(textField.getText().equals(button1.getText()));
+                if (textField.getText().equals(button1.getText())) {
+                    isEquals = true;
+                    for (JRadioButton button2 : radioButtons) {
+                button2.setSelected(textField.getText().equals(button2.getText()));
+           }
+                }
+            }
+            if(!isEquals) {
+                JOptionPane.showMessageDialog(frame,
+                        "такого нет");
             }
         });
-
 
         panel = new JPanel();
         panel.add(textField);
